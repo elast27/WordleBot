@@ -11,6 +11,7 @@ The bot uses user input in four seperate places:
 ---
 Once you provide the bot this information, it will format a request to an API which will return a list of valid words to guess.
 The bot then filters these remaining words based on the user input, and scores each word, explained below.
+Finally, the bot will print out the list of words, their scores, and the suggested next word to use (highest score)
 
 ## Word Scoring Algorithm
 The bot scores each word based on how likely it is to reduce the remaining sample size after the guess, eventually getting to just one word remaining.
@@ -22,6 +23,13 @@ I understand that this algorithm definitely has some flaws. It does not necessar
 ## Installation
 Feel free to clone this repo or download the code base. The project uses Maven to install Jackson Databind, the only necessary dependency. No other special installation is required
 
+## Improvements
+I am considering improving this bot if I have the time. Considerations include:
+- add easier user input (UI or other)
+- improving the algorithm used to select the next word.
+- The api uses pagination to reduce request/response latency. This unfortunately forces the bot to make multiple requests to acquire all results. There could be an improvement to this as well.
+
+Feel free to suggest other improvements as well.
 ## Conclusion
 Any questions or suggestions can be directed to me at [eric.l.last@gmail.com](mailto:eric.l.last@gmail.com)
 Thanks for taking the time to check this out :)

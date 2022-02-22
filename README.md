@@ -7,7 +7,7 @@ The bot uses user input in four seperate places:
 1. `String contains = "_____"` - this is the *green letters*. Any letter in the correct location should be added in this string. For example, if the correct word is **SHARK** and your guess is **SHAME**, the string should look like `'sha__'`
 2. `String exclude_letters = ""` - this is the gray letters. Any character that is not in the puzzle can be added in this string. Using the above example, the `exclude_letters` string would be `"rk"`.
 3. `String include_letters = ""` - this field is for any yellow or green letter. This tells the bot to only search for words containing these letters.
-4. `char[][] letters_not` - this 2D array represents the locations where we know a letter is incorrect. If a guess contains a yellow 'p' in the 2nd slot, you will add the char 'p' to letters_not[1]. 
+4. `char[][] letters_not` - this 2D array represents the locations where we know a letter is incorrect. If a guess contains a yellow `'p'` in the 2nd slot, you will add the char `'p'` to `letters_not[1]`. 
 Once you provide the bot this information, it will format a request to an API which will return a list of valid words to guess.
 The bot then filters these remaining words based on the user input, and scores each word, explained below.
 

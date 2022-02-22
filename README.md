@@ -4,7 +4,7 @@ Hi there! This is a little Wordle bot side project I am using to efficiently sol
 
 ## Explanation of the Code
 The bot uses user input in four seperate places:
-1. `String contains = "_____"` - this is the *green letters*. Any letter in the correct location should be added in this string. For example, if the correct word is **SHARK** and your guess is **SHAME**, the string should look like `'sha__'`. This string MUST be 5 characters, with underscores (\_) representing unknown letters.
+1. `String contains = "_____"` - this is the *green letters*. Any letter in the correct location should be added in this string. For example, if the correct word is **SHARK** and your guess is **SHAME**, the string should look like `"sha__"`. This string MUST be 5 characters, with underscores ( \_ ) representing unknown letters.
 2. `String exclude_letters = ""` - this is the gray letters. Any character that is not in the puzzle can be added in this string. Using the above example, the `exclude_letters` string would be `"rk"`.
 3. `String include_letters = ""` - this field is for any yellow or green letter. This tells the bot to only search for words containing these letters.
 4. `char[][] letters_not` - this 2D array represents the locations where we know a letter is incorrect. If a guess contains a yellow `'p'` in the 2nd slot, you will add the char `'p'` to `letters_not[1]`. 

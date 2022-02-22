@@ -15,10 +15,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Bot {
 	static HttpURLConnection conn;
-	static String contains = "__i__";
-	static String exclude_letters = "lahrgoy";
-	static String include_letters = "tste";
-	static char[][] letters_not = {{},{'e'},{'t'},{'e','s'},{'t'}};
+	static String contains = "t____";
+	static String exclude_letters = "lause";
+	static String include_letters = "tor";
+	static char[][] letters_not = {{},{'o'},{'t','r'},{},{'r'}};
 	
 	public static void main(String[] args) {
 		List<Word> remaining = new ArrayList<>();
@@ -133,7 +133,7 @@ public class Bot {
 	public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         List<Entry<K, V>> list = new ArrayList<>(map.entrySet());
         list.sort(Entry.comparingByValue());
-        
+
         Map<K, V> result = new LinkedHashMap<>();
         for (Entry<K, V> entry : list) {
             result.put(entry.getKey(), entry.getValue());

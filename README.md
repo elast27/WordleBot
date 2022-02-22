@@ -15,7 +15,7 @@ The bot then filters these remaining words based on the user input, and scores e
 ## Word Scoring Algorithm
 The bot scores each word based on how likely it is to reduce the remaining sample size after the guess, eventually getting to just one word remaining.
 It adds up the frequency of every letter in the remaining word list, then calculates each word's score by adding up the frequencies.
-HOWEVER, each unique letter in a word is counted only once when calculating word score. For example. If the two remaining words are *otter* and *other*, *other* will have a score of 10 (2 o's, 3 t's, 1 h, 2 e's, 2 r's). *otter* however will only have a score of 9, as the second t will not count towards the word's score calculation.
+HOWEVER, each unique letter in a word is counted only once when calculating word score. For example. If the two remaining words are `otter` and `other`, `other` will have a score of 10 (2 o's, 3 t's, 1 h, 2 e's, 2 r's). `otter` however will only have a score of 9, as the second t will not count towards the word's score calculation.
 
 I understand that this algorithm definitely has some flaws. It does not necessarily consider the probability of the position of each letter, which would be an improvement to results but detrimental to the running speed.
 

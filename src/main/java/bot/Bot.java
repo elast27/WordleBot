@@ -22,22 +22,8 @@ public class Bot {
 	
 	public static void main(String[] args) {
 		List<Word> remaining = new ArrayList<>();
-		String length = "5";
-		String word_sorting = "points";
-		String group_by_length = "true";
-		String page_size = "20";
-		String dictionary = "wordle";
-		String page_token = "1";
-		Map<String, String> parameters = new HashMap<>();
-		parameters.put("contains", contains);
-		parameters.put("exclude_letters", exclude_letters);
-		parameters.put("include_letters", include_letters);
-		parameters.put("length", length);
-		parameters.put("word_sorting", word_sorting);
-		parameters.put("group_by_length", group_by_length);
-		parameters.put("page_size", page_size);
-		parameters.put("dictionary", dictionary);
-		parameters.put("page_token", page_token);
+		Request req = new Request(contains, exclude_letters, include_letters);
+		Map<String, String> parameters = req.getParams();
 		try {
 			String queryParam =  ParameterStringBuilder.getParamsString(parameters);
 			String endpoint = "https://fly.wordfinderapi.com/api/search?"+queryParam;

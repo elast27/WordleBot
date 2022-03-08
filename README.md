@@ -1,6 +1,7 @@
 # WordleBot
 
 Hi there! This is a little Wordle bot side project I am using to efficiently solve the daily Wordle.
+Currently the bot has a 100% success rate and an average solve of 3.30 guesses.
 
 ## Explanation of the Code
 The bot uses user input in four seperate places:

@@ -5,8 +5,8 @@ Currently the bot has a 100% success rate and an average solve of 3.30 guesses.
 
 ## Explanation of the Code
 The bot uses user input in four seperate places:
-1. `String contains = "_____"` - this is the *green letters*. Any letter in the correct location should be added in this string. For example, if the correct word is **SHARK** and your guess is **SHAME**, the string should look like `"sha__"`. This string MUST be 5 characters, with underscores ( \_ ) representing unknown letters.
-2. `String exclude_letters = ""` - this is the gray letters. Any character that is not in the puzzle can be added in this string. Using the above example, the `exclude_letters` string would be `"me"`.
+1. `String contains = "_____"` - this is the *green letters*. Any letter in the correct location should be added in this string, in their proper locations. For example, if the correct word is **SHARK** and your guess is **SHAME**, the string should look like `"sha__"`. If your guess is **FLAME**, the string would be `"__a__"`. This string MUST be 5 characters, with underscores ( \_ ) representing unknown letters.
+2. `String exclude_letters = ""` - this is the gray letters. Any character that is not in the puzzle can be added in this string. Using the above example with **SHAME**, the `exclude_letters` string would be `"me"`. For **FLAME**, the `exclude_letters` string is `"flme"`.
 3. `String include_letters = ""` - this field is for any yellow or green letter. This tells the bot to only search for words containing these letters.
 4. `char[][] letters_not` - this 2D array represents the locations where we know a letter is incorrect. If a guess contains a yellow `'p'` in the 2nd slot, you will add the char `'p'` to `letters_not[1]`. Example: `static char[][] letters_not = {{},{'p'},{},{},{}};`
 ---
@@ -22,7 +22,7 @@ HOWEVER, each unique letter in a word is counted only once when calculating word
 I understand that this algorithm definitely has some flaws. It does not necessarily consider the probability of the position of each letter, which would be an improvement to results but detrimental to the running speed.
 
 ## Installation
-Feel free to clone this repo or download the code base. The project uses Maven to install Jackson Databind, the only necessary dependency. No other special installation is required
+Feel free to clone this repo or download the code base. The project uses Maven to install Jackson Databind, the only necessary dependency. It would be wise to import the code base as a Maven project. No other special installation is required
 
 ## Improvements
 I am considering improving this bot if I have the time. Considerations include:

@@ -15,10 +15,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Bot {
 	static HttpURLConnection conn;
-	static String contains = "t____";
-	static String exclude_letters = "lause";
-	static String include_letters = "tor";
-	static char[][] letters_not = {{},{'o'},{'t','r'},{},{'r'}};
+	static String contains = "_____";
+	static String exclude_letters = "";
+	static String include_letters = "";
+	static char[][] letters_not = {{},{},{},{},{}};
 	
 	public static void main(String[] args) {
 		List<Word> remaining = new ArrayList<>();
